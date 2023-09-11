@@ -57,3 +57,5 @@ console.log(favoritePlaces);
 favoritePlaces.sort((a, b) => b.localeCompare(a));
 
 console.log(favoritePlaces);
+
+

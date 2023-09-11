@@ -72,3 +72,6 @@ while ((guestList.length = 0)) {
     guestList.pop();
 }
 console.log(`Guest List: ${guestList}`);
+// 19. Dinner Guests: Working with one of the programs from Exercises 14 through 18, print a message indicating the number
+// of people you are inviting to dinner
+console.log(`Number of Guests is ${guestList.length}`);

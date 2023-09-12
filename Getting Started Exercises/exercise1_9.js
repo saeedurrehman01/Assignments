@@ -591,32 +591,77 @@ function city_country(city, country) {
 city_country("Faisalabad", "Pakistan");
 city_country("Istanbul", "Turkey");
 city_country("Paris", "France");
-/*********************************************************************************************************************
-40. Album: Write a function called make_album() that builds a Object describing a music album. The function should take in an artist name
-    and an album title, and it should return a Object containing these two pieces of information. Use the function to make three dictionaries
-    representing different albums. Print each return value to show that Objects are storing the album information correctly.
-    Add an optional parameter to make_album() that allows you to store the number of tracks on an album. If the calling line includes a value for the number
-    of tracks, add that value to the album’s Object. Make at least one new function call that includes the number of tracks on an album.
-***************************************************************************************************************************/
+function make_album(artist, Title, tracks) {
+    var album = {
+        artistName: artist,
+        albumTitle: Title,
+    };
+    if (tracks !== undefined) {
+        album.tracks = tracks;
+    }
+    return album;
+}
+console.log(make_album("Atif Aslam", "Doorie"));
+console.log(make_album("Jal", "Sajni", 3));
+console.log(make_album("Faris Shafi", "Introduction"));
 /*********************************************************************************************************************
 41. Magicians: Make a array of magician’s names. Pass the array to a function called show_magicians(), which prints the name of each magician in the array.
 ***************************************************************************************************************************/
+function show_magicians(magicians) {
+    for (let magician of magicians) {
+        console.log(magician);
+    }
+}
+var magicians = [
+    "Harry Houdini",
+    "David Copperfield",
+    "Penn Jillette (of Penn & Teller)",
+    "Criss Angel",
+    "Dynamo",
+];
+show_magicians(magicians);
 /*********************************************************************************************************************
 42. Great Magicians: Start with a copy of your program from Exercise 39. Write a function called make_great() that modifies the array of magicians
     by adding the phrase the Great to each magician’s name. Call show_magicians() to see that the list has actually been modified.
 ***************************************************************************************************************************/
+function make_great(magicians) {
+    return magicians.map((magician) => `The Great ${magician}`);
+}
+make_great(magicians);
 /*********************************************************************************************************************
 43. Unchanged Magicians: Start with your work from Exercise 40. Call the function make_great() with a copy of the array of magicians’ names.
     Because the original array will be unchanged, return the new array and store it in a separate array. Call show_magicians() with each array to show
     that you have one array of the original names and one array with the Great added to each magician’s name.
 ***************************************************************************************************************************/
+var modifiedMagicians = make_great(magicians);
+show_magicians(magicians);
+show_magicians(modifiedMagicians);
 /*********************************************************************************************************************
 44. Sandwiches: Write a function that accepts a array of items a person wants on a sandwich. The function should have one parameter that
     collects as many items as the function call provides, and it should print a summary of the sandwich that is being ordered.
     Call the function three times, using a different number of arguments each time.
 ***************************************************************************************************************************/
-/*********************************************************************************************************************
-45. Cars: Write a function that stores information about a car in a Object. The function should always receive a manufacturer and a model name.
-    It should then accept an arbitrary number of keyword arguments. Call the function with the required information and two other name-value pairs,
-    such as a color or an optional feature. Print the Object that’s returned to make sure all the information was stored correctly.
-***************************************************************************************************************************/
+function make_sandwich(itemsOnSandwich) {
+    console.log(`Ingredients are as following:`);
+    for (let item of itemsOnSandwich) {
+        console.log(` ${item}`);
+    }
+}
+make_sandwich(["Cheese", "Chicken", "BBQ Sauce"]);
+make_sandwich(["Peanut Butter"]);
+make_sandwich(["Lettuce", "Mayonnaise", "Grilled Chicken"]);
+function make_car(manufacturer, modelName, color, modelNumber) {
+    var carDetails = {
+        Manufacturer: manufacturer,
+        Model_Name: modelName,
+    };
+    if (color !== undefined) {
+        carDetails.Color = color;
+    }
+    if (modelNumber !== undefined) {
+        carDetails.Model_Number = modelName;
+    }
+    return carDetails;
+}
+console.log(make_car("Corolla", "GLI"));
+console.log(make_car("Honda", "City", "White", 2021));

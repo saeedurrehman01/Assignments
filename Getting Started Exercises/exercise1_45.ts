@@ -96,7 +96,6 @@ because your programs are too simple at this point, just add your name and the c
 Then write one sentence describing what the program does.
 ********************************************************************************************************************* */
 
-
 /*********************************************************************************************************************
 11. Names: Store the names of a few of your friends in a array called names. Print each person’s name by accessing each element in the list, one at a time.
 ********************************************************************************************************************* */

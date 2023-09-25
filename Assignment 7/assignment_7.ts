@@ -91,3 +91,6 @@ console.log(doubledOddArray);
 let nameArray: string[] = ["Alice", "Bob", "Charlie", "David", "Emily"];
 
 nameArray.forEach((data) => console.log(`${data}!`));
+
+console.log("ABC");
+
